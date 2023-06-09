@@ -112,6 +112,8 @@ local plugins = {
   },
 
   { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }
 
 return plugins
