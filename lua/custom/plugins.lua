@@ -53,6 +53,9 @@ local plugins = {
         "markdown",
       },
     },
+    config = {
+      autotag = true,
+    }
   },
 
   {
