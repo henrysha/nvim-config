@@ -36,8 +36,12 @@ local plugins = {
       },
     },
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
     opts = {
       ensure_installed = {
         "vim",
@@ -55,7 +59,7 @@ local plugins = {
     },
     config = {
       autotag = true,
-    }
+    },
   },
 
   {
