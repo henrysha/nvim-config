@@ -94,7 +94,7 @@ local plugins = {
         "html-lsp",
         "prettier",
         "stylua",
-        "eslint_d",
+        "eslint-lsp",
         "typescript-language-server",
       },
     },
