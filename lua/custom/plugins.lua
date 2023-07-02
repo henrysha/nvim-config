@@ -129,6 +129,17 @@ local plugins = {
   { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    setup = function()
+      require("refactoring").setup()
+    end,
+  },
 }
 
 return plugins
