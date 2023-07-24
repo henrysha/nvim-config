@@ -70,6 +70,27 @@ local plugins = {
     end,
   },
 
+
+  {
+    "williamboman/mason.nvim",
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    setup = {
+      ensure_installed = {
+        "lua-language-server",
+        "html-lsp",
+        "prettier",
+        "stylua",
+        "eslint-lsp",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "graphql",
+      },
+    }
+  },
+
   {
     "neovim/nvim-lspconfig",
 
@@ -84,21 +105,6 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
-  },
-
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "html-lsp",
-        "prettier",
-        "stylua",
-        "eslint-lsp",
-        "typescript-language-server",
-        "tailwindcss-language-server",
-      },
-    },
   },
 
   {
