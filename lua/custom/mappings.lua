@@ -16,4 +16,10 @@ M.refactoring = {
   },
 }
 
+M.general = {
+  n = {
+    ["<leader>ke"] = { ":bufdo bd<CR>", "Close All Buffers"}
+  }
+}
+
 return M
