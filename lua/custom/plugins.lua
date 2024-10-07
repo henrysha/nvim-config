@@ -1,6 +1,22 @@
 local plugins = {
 
   {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        panel = {
+          enabled = false,
+        },
+        suggestion = {
+          enabled = false,
+        },
+      }
+    end,
+  },
+
+  {
     "hrsh7th/nvim-cmp",
     opts = {
       sources = {
@@ -9,29 +25,14 @@ local plugins = {
         { name = "buffer" },
         { name = "nvim_lua" },
         { name = "path" },
-        { name = "cmp_tabnine" },
+        { name = "copilot" },
       },
     },
-
     dependencies = {
       {
-        "tzachar/cmp-tabnine",
-        build = "./install.sh",
+        "zbirenbaum/copilot-cmp",
         config = function()
-          local tabnine = require "cmp_tabnine.config"
-          tabnine:setup {
-            max_lines = 1000,
-            max_num_results = 20,
-            sort = true,
-            run_on_every_keystroke = true,
-            snippet_placeholder = "..",
-            ignored_file_types = {
-              -- default is not to ignore
-              -- uncomment to ignore in lua:
-              -- lua = true
-            },
-            show_prediction_strength = false,
-          } -- put your options here
+          require("copilot_cmp").setup()
         end,
       },
     },
@@ -70,7 +71,6 @@ local plugins = {
     end,
   },
 
-
   {
     "williamboman/mason.nvim",
   },
@@ -88,7 +88,7 @@ local plugins = {
         "tailwindcss-language-server",
         "graphql",
       },
-    }
+    },
   },
 
   {
